@@ -13,19 +13,19 @@ int main()
 
 	for (totalCount = 0; totalCount < countOfWorkers; totalCount++)
 	{
-		char choice;
+		char choiceOfCategory = '\0';
 		cout << "Enter the employee category:\n"
 			<< "w: waiter's singer "
 			<< "t: singing waiter q:quit\n";
-		cin >> choice;
-		while (std::strchr("wstq", choice) == nullptr)
+		cin >> choiceOfCategory;
+		while (std::strchr("wstq", choiceOfCategory) == nullptr)
 		{
 			cout << "Please enter a w, s, t, or q: ";
-			cin >> choice;
+			cin >> choiceOfCategory;
 		}
-		if (choice == 'q')
+		if (choiceOfCategory == 'q')
 			break;
-		switch (choice)
+		switch (choiceOfCategory)
 		{
 		case 'w': workers[totalCount] = new Waiter;
 			break;
